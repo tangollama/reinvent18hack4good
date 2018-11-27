@@ -1,0 +1,119 @@
+- type: unique | general ?
+  organization: null
+  gwc_club: 0001
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: 1h
+  material_commitment: laptop
+  label: ENCOURAGE YOUR LOCAL SCHOOL TO LAUNCH A GWC CLUB for 3rd to 5th graders
+  description: list here perhaps html formatted overview
+  steps:
+    - label: identify decision maker
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Identify a Facilitator
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: submit the application
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: launch the club
+      description: put everything concerning the description here
+      required: true
+      status: open
+  end_goal: club_created?
+  impact:
+    girls_helped: 10
+
+- type: unique | general ?
+  organization: null
+  gwc_club: null
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: 1h
+  material_commitment: laptop
+  label: HELP A GIRL IN YOUR COMMUNITY JOIN A GWC CLUB Physically
+  description: list here perhaps html formatted overview
+  steps:
+    - label: Learn about GWC Clubs together
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Search for a nearby Club to join
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Reach out to the Club
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Sign up to Join
+      description: put everything concerning the description here
+      required: true
+      status: open
+  end_goal: girl(s) joined club?
+  impact:
+    girls_helped: 1
+
+- type: unique | general ?
+  organization: null
+  gwc_club: null
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: 1h
+  material_commitment: laptop
+  label: HELP A GIRL IN YOUR COMMUNITY JOIN A GWC CLUB Virtually
+  description: list here perhaps html formatted overview
+  steps:
+    - label: Share the opportunity
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Search for a nearby Club to join
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Reach out to the Club
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Sign up to Join
+      description: put everything concerning the description here
+      required: true
+      status: open
+  end_goal: girl(s) emailed to join club?
+  impact:
+    girls_helped: 1
+
+- type: unique | general ?
+  organization: null
+  gwc_club: null
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: 1h
+  material_commitment: laptop
+  label: HELP GROW OUR PROGRAMS - INTRODUCE GWC TO YOUR COMMUNITY LEADERS
+  description: list here perhaps html formatted overview
+  steps:
+    - label: Identify Your Potential Community Contacts
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Identify the GWC Community Partner Manager Contact for Your State
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Send the Email Introduction to Your Contact and the Girls Who Code Community Partner Manager
+      description: put everything concerning the description here
+      required: true
+      status: open
+  end_goal: girl(s) emailed to join club?
+  impact:
+    girls_helped: 1
