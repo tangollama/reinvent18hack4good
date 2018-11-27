@@ -40,6 +40,7 @@ export default class LookupAddress extends Component {
         return (
             <div className="lookupAddressContainer">
                 <input type="text" 
+                    className="lookupAddressInput"
                     value={this.state.address} 
                     placeholder={this.label} 
                     onChange={evt => { this.working = evt.target.value }}

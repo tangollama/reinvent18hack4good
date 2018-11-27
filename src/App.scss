@@ -8,6 +8,14 @@
   .detailPane {
     width: 40%;
     height: 600px;
+    .lookupAddressContainer {
+      flex-direction: row;
+      display: flex;
+      .lookupAddressInput {
+        width: 60%;
+        margin-right: 10px;
+      }
+    }
   }
   .mapPane {
     width: 60%;
