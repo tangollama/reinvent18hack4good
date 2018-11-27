@@ -1,15 +1,16 @@
+@import '~leaflet/dist/leaflet.css';
 .gwcApp {
   width: 100%;
   height: 600px;
   display: flex;
   flex-direction: row;
   text-align: center;    
+  .detailPane {
+    width: 40%;
+    height: 600px;
+  }
   .mapPane {
     width: 60%;
-    height: 100vh;
-  }
-  .centered {
-    display: 'inline-block';
-    margin: 'auto';
+    height: 600px;
   }
 }

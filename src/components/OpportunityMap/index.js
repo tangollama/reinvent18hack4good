@@ -68,6 +68,9 @@ export default class OpportunityMap extends Component {
     const map = this.map
     const bounds = map.getBounds()
     let added = 0
+    if (!this.props.locations) {
+      return
+    }
     this.props.locations.forEach(location => {
       if (location.lat && location.lng && bounds.contains(L.latLng(location.lat, location.lng))) {        
         if (!location.marker) {
