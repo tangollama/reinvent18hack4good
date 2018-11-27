@@ -20,5 +20,38 @@
   .mapPane {
     width: 60%;
     height: 600px;
+    .leaflet-popup  {
+      h3 {
+        font-size: 12px;
+      }
+    }
+    .markerWrapper {
+      position: absolute;
+      background: #6eceb2;
+      border-radius: 50%;
+      width: 25px !important;
+      height: 25px !important;
+      left:0;
+      top:0;
+      display: block;
+      text-align: center;
+      border: 0;
+      border-radius: 50%;
+        svg {
+            height: 18px;
+            fill: white;
+            margin-top: 4px;
+        }
+    }
+    .markerWrapper::after {
+      position: absolute;
+      content: '';
+      width: 0px;
+      height: 0px;
+      bottom: -18px;
+      left: 2px;
+      border: 10px solid transparent;
+      border-top: 13px solid #6eceb2;
+    }
   }
 }

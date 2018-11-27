@@ -20,3 +20,22 @@ export const generateIcon = (store) => {
 export const removeLineBreaks = (text) => {
     return text.replace(/(\r\n\t|\n|\r\t)/gm," ")
 }
+
+export const randomPoint = (map) => {
+    const bounds = map.getBounds()
+    const x_min  = bounds.getEast()
+    const x_max  = bounds.getWest()
+    const y_min  = bounds.getSouth()
+    const y_max  = bounds.getNorth()
+
+    const lat = y_min + (Math.random() * (y_max - y_min))
+    const lng = x_min + (Math.random() * (x_max - x_min))
+
+    const pt = L.latLng(lat, lng)
+
+    if (bounds.contains(pt)) {
+        return [lat, lng]
+    } else {
+        return randomPoint(map)
+    }
+}

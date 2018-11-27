@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import './App.scss'
 import OpportunityMap from './components/OpportunityMap'
-import LookupAddress from './components/LookupAddress';
+import LookupAddress from './components/LookupAddress'
+import YAML from 'yamljs'
+import f from './testdata.yml'
 
 export default class App extends Component {
 
@@ -14,6 +16,12 @@ export default class App extends Component {
       center: [36.114647, -115.172813]
     }
     this.setCenterBind = this.setCenter.bind(this)
+  }
+
+  componentDidMount() {
+    const file = YAML.load(f)
+    console.debug(file)
+    this.setState({locations: file})
   }
 
   setCenter(lat, lng) {

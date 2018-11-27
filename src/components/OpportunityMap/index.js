@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import L from 'leaflet'
-import { generateIcon } from '../../utils'
+import { generateIcon, randomPoint } from '../../utils'
+import { renderToString } from 'react-dom/server'
 
 export default class OpportunityMap extends Component {
 
@@ -31,7 +32,7 @@ export default class OpportunityMap extends Component {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map)
 
-    this.addMarkers(true)
+    this.addMarkers()
     this.map.on('moveend', () => {      
       this.addMarkers()
     })    
@@ -41,12 +42,17 @@ export default class OpportunityMap extends Component {
     this.map.off('moveend')
   }
 
-  componentWillReceiveProps(nextProps) {
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.locations && !this.props.locations) {
+      this.addMarkers()
+    }
     this.map.setView(nextProps.center, this.map.getZoom())
   }
 
   _generatePopup(location) {
-
+    return renderToString(<div>
+      <h3>{location.label}</h3>
+    </div>)
   }
 
   _updateMarkerIcons(list) {
@@ -63,46 +69,42 @@ export default class OpportunityMap extends Component {
   /**
    * Smartly add Markers to the Map based on the bounded window, paying attention to what we've already added
    */
-  addMarkers(hardRefresh = false) {
+  addMarkers() {
     const { center, locationId } = this.props
     const map = this.map
-    const bounds = map.getBounds()
-    let added = 0
     if (!this.props.locations) {
       return
     }
     this.props.locations.forEach(location => {
-      if (location.lat && location.lng && bounds.contains(L.latLng(location.lat, location.lng))) {        
-        if (!location.marker) {
-          added++
-        } /*else {
-          skipPainting++
-        }*/
-        if (!location.marker) {
-          location.marker = L.marker([location.lat, location.lng], 
-            {
-              icon: generateIcon(location),
-              title: location.name,
-              alt: location.name
-            }
-          )
-          location.marker.addTo(map)
-          location.marker.on('click', (event) => { this._markerClick(event, location)})
-        } else {
-          if (location.status) {
-            location.marker.setIcon(generateIcon(location))
+      if (!location.lat || !location.lng) {
+        const pt = randomPoint(map)
+        location.lat = pt[0]
+        location.lng = pt[1]
+      }
+      if (!location.marker) {
+        location.marker = L.marker([location.lat, location.lng], 
+          {
+            icon: generateIcon(location),
+            title: location.label,
+            alt: location.label
           }
-          map.removeLayer(location.marker)
-          location.marker.addTo(map)
-          location.marker.on('click', (event) => { this._markerClick(event, location)})
-          if (center[0] == location.lat && center[1] == location.lng) {
-            if (locationId == location.id) {
-              location.marker.unbindPopup()
-              location.marker.bindPopup(this._generatePopup(location)).openPopup()  
-            } 
-          }
+        )
+        location.marker.addTo(map)
+        location.marker.on('click', (event) => { this._markerClick(event, location)})
+      } else {
+        if (location.status) {
+          location.marker.setIcon(generateIcon(location))
         }
-      } 
+        map.removeLayer(location.marker)
+        location.marker.addTo(map)
+        location.marker.on('click', (event) => { this._markerClick(event, location)})
+        if (center[0] == location.lat && center[1] == location.lng) {
+          if (locationId == location.id) {
+            location.marker.unbindPopup()
+            location.marker.bindPopup(this._generatePopup(location)).openPopup()  
+          } 
+        }
+      }
     })
   }
 
