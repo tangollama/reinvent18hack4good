@@ -1,6 +1,6 @@
-- type: unique | general ?
+- type: general
   organization: null
-  gwc_club: 0001
+  gwc_club: null
   location: null
   assigned_to: null
   status: open
@@ -28,8 +28,7 @@
   end_goal: club_created?
   impact:
     girls_helped: 10
-
-- type: unique | general ?
+- type: general
   organization: null
   gwc_club: null
   location: null
@@ -59,8 +58,7 @@
   end_goal: girl(s) joined club?
   impact:
     girls_helped: 1
-
-- type: unique | general ?
+- type: general
   organization: null
   gwc_club: null
   location: null
@@ -90,8 +88,7 @@
   end_goal: girl(s) emailed to join club?
   impact:
     girls_helped: 1
-
-- type: unique | general ?
+- type: general
   organization: null
   gwc_club: null
   location: null
@@ -114,6 +111,210 @@
       description: put everything concerning the description here
       required: true
       status: open
-  end_goal: girl(s) emailed to join club?
+  end_goal: connections made between gwc and community leaders
   impact:
-    girls_helped: 1
+    connections_made: 1
+- type: general
+  organization: null
+  gwc_club: null
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: 1h
+  material_commitment: laptop
+  label: SPREAD AWARENESS - SHARE GWC WOMEN IN TECH LESSON PLANS WITH LOCAL SCHOOLS
+  description: list here perhaps html formatted overview
+  steps:
+    - label: View the lesson plans
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Share the lesson plans with your local schools
+      description: put everything concerning the description here
+      required: true
+      status: open
+  end_goal: schools given gwc lesson plans
+  impact:
+    schools_with_lesson_plans: 1
+- type: general
+  organization: null
+  gwc_club: null
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: 1h
+  material_commitment: laptop
+  label: HONOR A GIRL IN YOUR LIFE - DONATE TO GWC
+  description: list here perhaps html formatted overview
+  steps:
+    - label: Visit GWC’s Donation Page
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Fill out the donation form
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Leave us a message
+      description: put everything concerning the description here
+      required: false
+      status: open
+  end_goal: donations made
+  impact:
+    donations_made: 1
+- type: general
+  organization: null
+  gwc_club: null
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: several weeks
+  material_commitment: group of volunteers
+  label: GET GIRLS INTERESTED IN CODING -  HOST A GWC EXPOSURE EVENT AT YOUR OFFICE
+  description: list here perhaps html formatted overview
+  steps:
+    - label: Review the sample run-of-show
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Liaise with GWC
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Gather a team of volunteers
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Draft the event
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Reach out to local schools and community organizations
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Schedule the Event
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Plan the content
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Don’t forget the details
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Hold the event and connect attendees with GWC
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Close the loop with GWC
+      description: put everything concerning the description here
+      required: true
+      status: open
+  end_goal: girls exposed to girls who code
+  impact:
+    exposure_num: 1
+- type: general
+  organization: null
+  gwc_club: null
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: several weeks
+  material_commitment: group of volunteers
+  label: SPARK GIRLS INTEREST IN CS - ORGANIZE A GWC BOOK DRIVE FOR YOUR LOCAL LIBRARY
+  description: list here perhaps html formatted overview
+  steps:
+    - label: Set a goal
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Call your local library
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Purchase Books
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Deliver Books
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Hold Storytime
+      description: put everything concerning the description here
+      required: false
+      status: open
+  end_goal: books donated
+  impact:
+    books_donated: 1
+- type: general
+  organization: null
+  gwc_club: null
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: several weeks
+  material_commitment: group of volunteers
+  label: SUPPORT THE MOVEMENT HOLD A FUNDRAISER BENEFITING GWC
+  description: list here perhaps html formatted overview
+  steps:
+    - label: Review the Fundraising Toolkit
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Consider What Communities to Engage
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Learn about Past successful Fundraisers
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Set up Your Classy Page
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Plan and Hold the Fundraiser
+      description: put everything concerning the description here
+      required: true
+      status: open
+  end_goal: amount raised?
+  impact:
+    amount_raised: 1
+- type: general
+  organization: null
+  gwc_club: null
+  location: null
+  assigned_to: null
+  status: open
+  time_commitment: several weeks
+  material_commitment: group of volunteers
+  label: CLOSE THE GENDER GAP - HIRE A GWC ALUMNI
+  description: list here perhaps html formatted overview
+  steps:
+    - label: Identify opportunities to hire GWC alumni
+      description: put everything concerning a decision maker here
+      required: true
+      status: open
+    - label: Write anti-bias job descriptions
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: "Create an account on #HireMe, GWC’s job platform "
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: "Post open positions on #HireMe"
+      description: put everything concerning the description here
+      required: true
+      status: open
+    - label: Report back to GWC on alumni hired
+      description: put everything concerning the description here
+      required: true
+      status: open
+  end_goal: gender gap closed?
+  impact:
+    gender gap closed: 1
