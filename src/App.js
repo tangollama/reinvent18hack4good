@@ -1,28 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.scss'
+import OpportunityMap from './components/OpportunityMap'
+import {BounceLoader} from 'react-spinners'
 
-class App extends Component {
+export default class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.callbacks = {}
+    this.center = [36.114647, -115.172813]
+    this.state = {
+      locationId: -1,
+      locations: null
+    }
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    if (this.state.locations) {
+      return (
+        <div className="gwcApp">
+          <OpportunityMap 
+                          callbacks={this.callbacks}
+                          center={this.center}
+                          className="mapPane"
+                          ref={(ref) => this.mapRef = ref}
+                          locationId={this.state.locationId}
+                          locations={this.state.locations}
+                          {...this.props}
+                      />   
+        </div>
+      )  
+    } else {
+      return (
+        <div className="gwcApp">
+          <BounceLoader className="centered" />
+        </div>        
+      )
+    }
   }
 }
-
-export default App;

@@ -1,0 +1,15 @@
+.gwcApp {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;    
+  .mapPane {
+    width: 60%;
+    height: 100vh;
+  }
+  .centered {
+    display: 'inline-block';
+    margin: 'auto';
+  }
+}
