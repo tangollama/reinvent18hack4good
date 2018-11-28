@@ -42,3 +42,14 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Deployment
+
+Install npm packages
+`npm install`
+Build the App
+`npm run build`
+Deploy the bucket
+`AWS_PROFILE=your_profile serverless deploy`
+Upload the Code
+`serverless client deploy --region us-east-1`
