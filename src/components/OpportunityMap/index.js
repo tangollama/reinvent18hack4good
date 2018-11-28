@@ -10,7 +10,6 @@ export default class OpportunityMap extends Component {
       callbacks: PropTypes.object.isRequired,
       className: PropTypes.string,
       center: PropTypes.array.isRequired,
-      locationId: PropTypes.number.isRequired,
       locations: PropTypes.array,
   }
 
@@ -71,10 +70,7 @@ export default class OpportunityMap extends Component {
    */
   addMarkers() {
     const { center, locationId } = this.props
-    const map = this.map
-    if (!this.props.locations) {
-      return
-    }
+    const map = this.map    
     this.props.locations.forEach(location => {
       if (!location.lat || !location.lng) {
         const pt = randomPoint(map)
