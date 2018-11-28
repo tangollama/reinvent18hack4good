@@ -19,12 +19,19 @@ export default class App extends Component {
       setOpportunity: this.setOpportunity.bind(this),
       setCenter: this.setCenter.bind(this)
     }
+    this.opportunityListUrl = null
   }
 
   componentDidMount() {
-    const file = YAML.load(f)
-    console.debug(file)
-    this.setState({opportunities: file})
+    if (this.opportunityListUrl) {
+      fetch(this.opportunityListUrl)
+        .then(response => response.json())
+        .then(data => this.setState({ opportunities: data }));
+    } else {
+      const file = YAML.load(f)    
+      console.debug(file)
+      this.setState({opportunities: file})  
+    }
   }
 
   setCenter(lat, lng) {
